@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Styles/LevelButton.tres" type="Theme" id=1]
+
+[node name="Button" type="Button"]
+anchor_right = 0.09
+rect_min_size = Vector2( 92, 36 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

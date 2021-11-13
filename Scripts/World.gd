@@ -1,6 +1,5 @@
 extends Node
-
-export var bullet: PackedScene
+class_name Level
 
 func _on_ready_to_fire(enemy: Enemy):
 	enemy.fire($Player.position, self)
@@ -29,7 +28,10 @@ func _input(event):
 				
 				if no_enemies:
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-					get_tree().change_scene("res://UIs/Error.tscn")
+					WinScreenArgs.next_scene = load("res://Levels/Level" + str(LevelRouter.current_level + 1) + ".tscn")
+					WinScreenArgs.replay_scene = load("res://Levels/Level" + str(LevelRouter.current_level) + ".tscn")
+					LevelRouter.best_level = LevelRouter.current_level + 1
+					get_tree().change_scene("res://UIs/YouWinScreen.tscn")
 
 func _ready():
 	# Hide the mouse

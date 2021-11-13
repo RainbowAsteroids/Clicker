@@ -29,6 +29,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Health Bar.gd"
 }, {
+"base": "Node",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Scripts/World.gd"
+}, {
+"base": "Panel",
+"class": "LevelSelect",
+"language": "GDScript",
+"path": "res://UIs/LevelSelect.gd"
+}, {
+"base": "Panel",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://Scripts/MainMenu.gd"
+}, {
 "base": "Area2D",
 "class": "Player",
 "language": "GDScript",
@@ -59,6 +74,9 @@ _global_script_class_icons={
 "Enemy": "",
 "Error": "",
 "HealthBar": "",
+"Level": "",
+"LevelSelect": "",
+"MainMenu": "",
 "Player": "",
 "RadialTurret": "",
 "ShotgunTurret": "",
@@ -69,13 +87,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Clicker"
-run/main_scene="res://Base Scenes/EmptyLevel.tscn"
+run/main_scene="res://UIs/MainMenu.tscn"
 config/icon="res://Images/icon.png"
 
 [autoload]
 
-WinScreenArgs="*res://Scripts/WinScreenArgs.gd"
-ErrorArgs="*res://Scripts/ErrorArgs.gd"
+WinScreenArgs="*res://Singletons/WinScreenArgs.gd"
+ErrorArgs="*res://Singletons/ErrorArgs.gd"
+LevelRouter="*res://Singletons/LevelRouter.gd"
 
 [display]
 

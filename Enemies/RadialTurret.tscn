@@ -8,4 +8,5 @@
 script = ExtResource( 1 )
 fire_delay = 0.063
 bullet = ExtResource( 3 )
+bullet_damage = 5.0
 angle_variation = 15

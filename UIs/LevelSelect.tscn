@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UIs/LevelSelect.gd" type="Script" id=3]
+[ext_resource path="res://UIs/LevelButton.tscn" type="PackedScene" id=4]
+
+[node name="LevelSelect" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0.901961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+level_button = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.18921
+margin_right = 7.18921
+custom_constants/margin_right = 61
+custom_constants/margin_top = 30
+custom_constants/margin_left = 61
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 61.0
+margin_top = 30.0
+margin_right = 969.0
+margin_bottom = 570.0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 908.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level Select"
+align = 1
+valign = 1
+
+[node name="Buttons" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 908.0
+margin_bottom = 494.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 40
+custom_constants/hseparation = 180
+columns = 4
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 498.0
+margin_right = 908.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back to Menu"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
