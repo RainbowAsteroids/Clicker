@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/Error.gd" type="Script" id=3]
+
+[node name="Error" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 122
+custom_constants/margin_top = 60
+custom_constants/margin_left = 122
+custom_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 122.0
+margin_top = 60.0
+margin_right = 902.0
+margin_bottom = 540.0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 780.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 2 )
+text = "Error"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_left = 37.0
+margin_top = 237.0
+margin_right = 742.0
+margin_bottom = 273.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 1 )
+text = "An error has occured, but no message was supplied."
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 780.0
+margin_bottom = 480.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit game"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

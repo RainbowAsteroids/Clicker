@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/RadialTurret.gd" type="Script" id=1]
+[ext_resource path="res://Base Scenes/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bullets/Bullet.tscn" type="PackedScene" id=3]
+
+[node name="RadialTurret" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+fire_delay = 0.063
+bullet = ExtResource( 3 )
+angle_variation = 15
