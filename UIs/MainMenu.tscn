@@ -44,23 +44,23 @@ size_flags_vertical = 5
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 902.0
-margin_bottom = 95.0
+margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
 text = "Clicker"
 align = 1
 valign = 1
 
 [node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 99.0
+margin_top = 76.0
 margin_right = 902.0
-margin_bottom = 129.0
+margin_bottom = 106.0
 custom_fonts/font = SubResource( 1 )
 text = "Bullet hell game controlled by the mouse"
 align = 1
 valign = 1
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 133.0
+margin_top = 110.0
 margin_right = 902.0
 margin_bottom = 346.0
 size_flags_horizontal = 3
@@ -104,7 +104,7 @@ margin_top = 515.0
 margin_right = 902.0
 margin_bottom = 540.0
 custom_fonts/font = SubResource( 2 )
-text = "v0.1.0"
+text = "v0.1.0-beta"
 align = 1
 valign = 1
 __meta__ = {
