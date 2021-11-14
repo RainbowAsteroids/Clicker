@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Bullet.gd"
 }, {
+"base": "Panel",
+"class": "DeathScreen",
+"language": "GDScript",
+"path": "res://Scripts/DeathScreen.gd"
+}, {
 "base": "Area2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -71,6 +76,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"DeathScreen": "",
 "Enemy": "",
 "Error": "",
 "HealthBar": "",
@@ -95,6 +101,7 @@ config/icon="res://Images/icon.png"
 WinScreenArgs="*res://Singletons/WinScreenArgs.gd"
 ErrorArgs="*res://Singletons/ErrorArgs.gd"
 LevelRouter="*res://Singletons/LevelRouter.gd"
+DeathScreenArgs="*res://Singletons/DeathScreenArgs.gd"
 
 [display]
 
@@ -110,7 +117,7 @@ click={
 }
 pause={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }

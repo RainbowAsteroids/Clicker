@@ -1,14 +1,23 @@
 extends Node
 class_name Level
 
+var player_dead = false
+
 func _on_ready_to_fire(enemy: Enemy):
-	enemy.fire($Player.position, self)
+	if not player_dead:
+		enemy.fire($Player.position, self)
 
 # TODO: Make "You died!" screen
-# TODO: Make "You win!" screen
 
 func _on_Player_damage(health):
 	$HealthBar.adjust(health)
+
+func _on_Player_death():
+	player_dead = true
+	DeathScreenArgs.return_scene = load("res://Levels/Level" + str(LevelRouter.current_level) + ".tscn")
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene("res://UIs/DeathScreen.tscn")
 
 func _input(event):
 	if event.is_action("click"):
@@ -16,7 +25,7 @@ func _input(event):
 		var areas = $Player.get_overlapping_areas()
 		if not areas.empty():
 			for area in areas:
-				if area is Enemy:
+				if is_instance_valid(area) and area is Enemy:
 					area.queue_free()
 				
 				# Check if there are any more enemies left
@@ -41,3 +50,4 @@ func _ready():
 	for child in get_children():
 		if child is Enemy:
 			child.connect("ready_to_fire", self, "_on_ready_to_fire")
+

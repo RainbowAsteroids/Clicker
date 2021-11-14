@@ -17,3 +17,14 @@ func _on_Continue_pressed():
 	a.pressed = true
 	Input.parse_input_event(a)
 
+func _on_Restart_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://Levels/Level" + str(LevelRouter.current_level) + ".tscn")
+
+func _on_Level_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://UIs/LevelSelect.tscn")
+
+func _on_Menu_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://UIs/MainMenu.tscn")

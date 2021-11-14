@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/PauseContainer.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/button.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=3]
 [ext_resource path="res://Base Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Styles/UIButton.tres" type="Theme" id=5]
 [ext_resource path="res://Fonts/title.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Base Scenes/HealthBar.tscn" type="PackedScene" id=7]
 
@@ -63,18 +64,54 @@ valign = 1
 [node name="VSplitContainer" type="VSplitContainer" parent="PauseContainer/Panel/PauseScreen/VBoxContainer"]
 margin_top = 76.0
 margin_right = 902.0
-margin_bottom = 494.0
+margin_bottom = 320.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Continue" type="Button" parent="PauseContainer/Panel/PauseScreen/VBoxContainer"]
-margin_top = 498.0
-margin_right = 902.0
-margin_bottom = 540.0
+margin_left = 389.0
+margin_top = 324.0
+margin_right = 512.0
+margin_bottom = 375.0
+size_flags_horizontal = 4
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Continue"
-flat = true
+
+[node name="Restart" type="Button" parent="PauseContainer/Panel/PauseScreen/VBoxContainer"]
+margin_left = 401.0
+margin_top = 379.0
+margin_right = 500.0
+margin_bottom = 430.0
+size_flags_horizontal = 4
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Restart"
+
+[node name="Level" type="Button" parent="PauseContainer/Panel/PauseScreen/VBoxContainer"]
+margin_left = 373.0
+margin_top = 434.0
+margin_right = 529.0
+margin_bottom = 485.0
+size_flags_horizontal = 4
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Level Select"
+
+[node name="Menu" type="Button" parent="PauseContainer/Panel/PauseScreen/VBoxContainer"]
+margin_left = 363.0
+margin_top = 489.0
+margin_right = 538.0
+margin_bottom = 540.0
+size_flags_horizontal = 4
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Quit to Menu"
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_Player_area_entered"]
 [connection signal="damage" from="Player" to="." method="_on_Player_damage"]
+[connection signal="death" from="Player" to="." method="_on_Player_death"]
 [connection signal="pressed" from="PauseContainer/Panel/PauseScreen/VBoxContainer/Continue" to="PauseContainer" method="_on_Continue_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/PauseScreen/VBoxContainer/Restart" to="PauseContainer" method="_on_Restart_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/PauseScreen/VBoxContainer/Level" to="PauseContainer" method="_on_Level_pressed"]
+[connection signal="pressed" from="PauseContainer/Panel/PauseScreen/VBoxContainer/Menu" to="PauseContainer" method="_on_Menu_pressed"]
